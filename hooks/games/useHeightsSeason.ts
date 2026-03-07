@@ -21,11 +21,7 @@ export const useHeightsSeason = () => {
 
   const fetchCurrentSeason = useCallback(async () => {
     try {
-      console.log(1122, "fetching");
       const feeds = await sdsApi.getGameSeasons("steem-heights");
-
-      console.log(1122, "feeds", feeds.length);
-
       if (feeds && feeds.length > 0) {
         setSeasonalHistory(
           feeds.filter((item: Feed) => item.cashout_time === 0),
@@ -33,16 +29,10 @@ export const useHeightsSeason = () => {
         // An active season has a future cashout_time (> 0), while ended seasons have it as 0
         const activeFeed = feeds.find((item: Feed) => item.cashout_time > 0);
 
-        console.log(
-          1122,
-          "activeFeed",
-          activeFeed,
-          getSeasonFromTitle(activeFeed?.title || ""),
-        );
-
         if (activeFeed) {
           setActiveSeasonPost(activeFeed);
           const seasonNum = getSeasonFromTitle(activeFeed.title);
+
           if (seasonNum) {
             setCurrentSeason(seasonNum);
           }

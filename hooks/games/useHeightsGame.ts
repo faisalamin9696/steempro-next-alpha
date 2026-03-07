@@ -195,7 +195,6 @@ export const useHeightsGame = ({
     setSessionInfo(null);
 
     // Only generate secure session if user is logged in and active season
-    console.log("1122", session, currentSeason);
     if (session?.user?.name && currentSeason) {
       setIsGeneratingSession(true);
       try {
@@ -250,7 +249,7 @@ export const useHeightsGame = ({
 
     // Final step: trigger loops
     setGameState("playing");
-  }, [selectedSkin, session?.user?.name]);
+  }, [selectedSkin, session?.user?.name, currentSeason]);
 
   useEffect(() => {
     if (gameState !== "playing" || isPaused) return;
