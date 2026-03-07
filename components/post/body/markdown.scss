@@ -1,0 +1,370 @@
+.markdown-body {
+  font-family:
+    "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Prose-like spacing */
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: none;
+
+  /* Dark mode invert (approx) */
+  color: #1f2937;
+
+  p {
+    font-size: 100%;
+    line-height: 150%;
+    margin: 0 0 1.5rem 0;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+
+  h1 {
+    margin: 2.5rem 0 0.3rem;
+    font-size: 160%;
+  }
+  h2 {
+    margin: 2.5rem 0 0.3rem;
+    font-size: 140%;
+  }
+  h3 {
+    margin: 2rem 0 0.3rem;
+    font-size: 120%;
+  }
+  h4 {
+    margin: 1.5rem 0 0.2rem;
+    font-size: 110%;
+  }
+  h5 {
+    margin: 1rem 0 0.2rem;
+    font-size: 100%;
+  }
+  h6 {
+    margin: 1rem 0 0.2rem;
+    font-size: 90%;
+  }
+}
+
+.dark .markdown-body {
+  color: #e5e7eb;
+}
+
+.markdown-body {
+  color: #333;
+}
+
+/* Small screens: reduce font size */
+@media (max-width: 640px) {
+  .markdown-body {
+    font-size: 0.875rem;
+  }
+}
+
+.markdown-body a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.markdown-body hr {
+  clear: both;
+  margin: 15px 0;
+}
+
+.markdown-body p {
+  line-height: 1.75;
+}
+
+.markdown-body pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.markdown-body div.pull-right {
+  float: right;
+  padding-left: 1rem;
+  max-width: 50%;
+}
+
+.markdown-body div.pull-left {
+  float: left;
+  padding-right: 1rem;
+  max-width: 50%;
+}
+
+/* Scrollable table container */
+.markdown-body .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dark .markdown-body .table-wrapper {
+  border-color: #374151;
+}
+
+/* Table */
+.markdown-body table {
+  width: 100%;
+  table-layout: auto;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.markdown-body table thead {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.dark .markdown-body table thead {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+.markdown-body table th {
+  background-color: #f8fafc;
+  color: #0f172a;
+  text-align: left;
+  padding: 0.875rem 1rem;
+  font-weight: 700;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  border: 1px solid #cbd5e1;
+  /* border-bottom: 2px solid #94a3b8; */
+}
+
+.dark .markdown-body table th {
+  background-color: #1e293b;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+/* Body cells */
+.markdown-body table td {
+  padding: 0.875rem 1rem;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  vertical-align: middle;
+  white-space: normal;
+  transition: all 0.2s ease;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.markdown-body table td a {
+  white-space: normal;
+  word-break: normal;
+}
+
+.dark .markdown-body table td {
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+/* Zebra stripping & Hover */
+.markdown-body tbody tr:nth-child(odd) {
+  background-color: #fcfcfd;
+}
+
+.dark .markdown-body tbody tr:nth-child(odd) {
+  background-color: #0f172a;
+}
+
+.markdown-body tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+.dark .markdown-body tbody tr:hover {
+  background-color: #1e293b;
+}
+
+/* After clear fix */
+.markdown-body::after,
+.markdown-body hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+/* Negative group */
+.markdown-body .MarkdownViewer__negative_group {
+  color: crimson;
+  border-top: 1px solid #cacaca;
+  padding-top: 1rem;
+}
+
+/* Video Wrapper */
+.markdown-body div.videoWrapper {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.2%;
+  position: relative;
+}
+
+.markdown-body div.videoWrapper iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* alignment utilities */
+.markdown-body span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both;
+}
+
+.markdown-body {
+  div.text-justify {
+    text-align: justify;
+  }
+
+  div.text-right {
+    text-align: right;
+  }
+
+  div.text-center {
+    text-align: center;
+  }
+
+  div.text-rtl {
+    direction: rtl;
+  }
+}
+
+/* Details box */
+.markdown-body details {
+  background: #f8f8f8;
+  border-radius: 6px;
+  outline: 2px solid #e5e7eb;
+}
+
+.dark .markdown-body details {
+  background: #2c3a45;
+  outline-color: #6b7280;
+}
+
+/* Inline code */
+.markdown-body :not(pre) > code {
+  padding: 0.2rem;
+  font-size: 85%;
+  border-radius: 3px;
+  background-color: #f4f4f4;
+  font-weight: inherit;
+  color: #1f2937;
+}
+
+.dark .markdown-body :not(pre) > code {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.markdown-body {
+  strong {
+    font-weight: 600;
+  }
+
+  ol,
+  ul {
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  blockquote {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #4b5563;
+    font-style: italic;
+
+    > p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .dark & blockquote {
+    border-left-color: #4b5563;
+    color: #9ca3af;
+  }
+}
+
+/* Code inside pre */
+.markdown-body pre code {
+  padding: 0.25rem;
+  display: block;
+  overflow-x: auto;
+}
+
+/* Remove pseudo quotes */
+.markdown-body code::before,
+.markdown-body code::after {
+  content: "" !important;
+}
+
+/* Phishy class */
+.phishy {
+  color: #ef4444;
+  display: inline;
+}
+
+.phishy h1,
+.phishy h2,
+.phishy h3,
+.phishy ol,
+.phishy ul,
+.phishy li,
+.phishy ::marker {
+  color: #ef4444;
+}
+
+/* Put this in globals.css or your markdown css file */
+.markdown-body a,
+.markdown-body a:link,
+.markdown-body a:visited {
+  max-width: 100%;
+  word-break: normal;
+}
+
+/* Ensure images/inline elements inside links behave */
+.markdown-body img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: none;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body img {
+    width: auto;
+  }
+}
+
+/* Small variant for comments */
+.markdown-body.MarkdownViewer--small {
+  font-family: inherit;
+  font-size: 100%;
+
+  img {
+    max-width: 400px;
+    max-height: 400px;
+  }
+
+  div.videoWrapper {
+    max-width: 480px;
+    padding-bottom: 270px;
+  }
+}
