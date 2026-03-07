@@ -195,6 +195,7 @@ export const useHeightsGame = ({
     setSessionInfo(null);
 
     // Only generate secure session if user is logged in and active season
+    console.log("1122", session, currentSeason);
     if (session?.user?.name && currentSeason) {
       setIsGeneratingSession(true);
       try {
