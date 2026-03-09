@@ -22,6 +22,7 @@ export const useHeightsSeason = () => {
   const fetchCurrentSeason = useCallback(async () => {
     try {
       const feeds = await sdsApi.getGameSeasons("steem-heights");
+
       if (feeds && feeds.length > 0) {
         setSeasonalHistory(
           feeds.filter((item: Feed) => item.cashout_time === 0),
@@ -32,7 +33,6 @@ export const useHeightsSeason = () => {
         if (activeFeed) {
           setActiveSeasonPost(activeFeed);
           const seasonNum = getSeasonFromTitle(activeFeed.title);
-
           if (seasonNum) {
             setCurrentSeason(seasonNum);
           }
