@@ -8,13 +8,12 @@ const nextConfig: NextConfig = {
   // },
   experimental: {
     turbopackFileSystemCacheForDev: true,
-    cssChunking: true, // default
   },
   productionBrowserSourceMaps: true,
   transpilePackages: ["lottie-react", "lottie-web", "lucide-react", "next"],
   images: {
     qualities: [25, 50, 75],
-    unoptimized: true,
+    unoptimized: false,
     remotePatterns: [
       {
         protocol: "https",
@@ -143,20 +142,6 @@ const nextConfig: NextConfig = {
       {
         source: "/EXPLORER",
         destination: "/explorer",
-      },
-    ];
-  },
-
-  async headers() {
-    return [
-      {
-        source: "/:path*\\.(svg|jpg|jpeg|png|gif|ico|json|webp|woff2)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
       },
     ];
   },
