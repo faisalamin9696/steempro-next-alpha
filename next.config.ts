@@ -3,9 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: true,
   cacheComponents: true,
-  // turbopack: {
-  //   root: join(__dirname, ".."),
-  // },
   experimental: {
     turbopackFileSystemCacheForDev: true,
   },
@@ -13,7 +10,7 @@ const nextConfig: NextConfig = {
   transpilePackages: ["lottie-react", "lottie-web", "lucide-react", "next"],
   images: {
     qualities: [25, 50, 75],
-    unoptimized: false,
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
