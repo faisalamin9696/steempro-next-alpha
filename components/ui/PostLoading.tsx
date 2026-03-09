@@ -10,7 +10,7 @@ export default function PostLoading() {
       endClass="w-[320px] min-w-[320px] hidden lg:block"
       end={
         <Card className="card w-full p-4 gap-4">
-          <Skeleton className="h-[100px] w-full rounded-xl" />
+          <Skeleton className="h-25 w-full rounded-xl" />
           <div className="space-y-3">
             <Skeleton className="h-4 w-3/4 rounded-lg" />
             <Skeleton className="h-4 w-1/2 rounded-lg" />

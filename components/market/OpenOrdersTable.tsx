@@ -9,9 +9,9 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useAccountsContext } from "../auth/AccountsContext";
 import { ColumnDef, DataTable } from "../ui/data-table";
+import { getOrderAmount, getOrderPrice } from "@/app/market/page";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux/store";
 import { addLoginHandler } from "@/hooks/redux/reducers/LoginReducer";
-import { getOrderAmount, getOrderPrice } from "@/app/market/(site)/MarketPage";
 
 const OpenOrdersTable = ({
   orders,
