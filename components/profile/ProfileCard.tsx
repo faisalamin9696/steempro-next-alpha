@@ -17,6 +17,7 @@ import { useEffect, useState } from "react";
 import UsersModal from "../ui/UsersModal";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux/store";
 import { addLoginHandler } from "@/hooks/redux/reducers/LoginReducer";
+import { addProfileHandler } from "@/hooks/redux/reducers/ProfileReducer";
 import { calculateVoteValue } from "@/utils/helper";
 import { Constants } from "@/constants";
 import MarkdownViewer from "../post/body/MarkdownViewer";
@@ -54,6 +55,8 @@ function ProfileCard({ account, headerClass, ...props }: Props) {
   useEffect(() => {
     if (isMe) {
       dispatch(addLoginHandler(account));
+    } else {
+      dispatch(addProfileHandler(account));
     }
   }, [isMe, account, dispatch]);
 
@@ -193,7 +196,7 @@ function ProfileCard({ account, headerClass, ...props }: Props) {
                 100,
                 globalProps.fund_per_rshare,
                 globalProps.median_price,
-                false
+                false,
               ).toLocaleString()}`,
               title: "Vote Value",
             },

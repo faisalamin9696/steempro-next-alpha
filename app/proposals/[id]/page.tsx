@@ -1,6 +1,6 @@
 "use client";
 
-import PostPage from "@/app/post/[author]/[permlink]/page";
+import PostPage from "@/app/post/[author]/[permlink]/(site)/PostPage";
 import ProposalDetailModal from "@/components/proposals/ProposalDetailModal";
 import ProposalItem from "@/components/proposals/ProposalItem";
 import { useAppSelector } from "@/hooks/redux/store";

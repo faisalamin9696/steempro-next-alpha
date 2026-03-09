@@ -17,9 +17,9 @@ import { useState } from "react";
 import { getUnreadChatCount } from "@/libs/supabase/chat";
 import ChatModal from "../chat/ChatModal";
 import MemoKeyModal from "../chat/MemoKeyModal";
-import secureLocalStorage from "react-secure-storage";
 import { getChatMemoKey } from "@/utils/user";
 import Reputation from "../post/Reputation";
+import { addProfileHandler } from "@/hooks/redux/reducers/ProfileReducer";
 
 function ProfileHeader({ account }: { account: AccountExt }) {
   const { data: session } = useSession();
@@ -51,11 +51,15 @@ function ProfileHeader({ account }: { account: AccountExt }) {
   };
 
   useEffect(() => {
-    if (isMe) dispatch(addLoginHandler(account));
+    if (isMe) {
+      dispatch(addLoginHandler(account));
+    } else {
+      dispatch(addProfileHandler(account));
+    }
     if (session?.user?.name) {
       getUnreadChatCount(session.user.name).then(setUnreadCount);
     }
-  }, [isMe, session]);
+  }, [isMe, session, account, dispatch]);
 
   return (
     <>

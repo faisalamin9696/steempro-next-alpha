@@ -10,9 +10,8 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: true,
     cssChunking: true, // default
   },
-  transpilePackages: ["lottie-react", "lottie-web", "lucide-react", "next"],
   productionBrowserSourceMaps: true,
-
+  transpilePackages: ["lottie-react", "lottie-web", "lucide-react", "next"],
   images: {
     qualities: [25, 50, 75],
     unoptimized: true,
