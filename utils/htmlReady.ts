@@ -1,4 +1,4 @@
-import xmldom from "xmldom";
+import xmldom from "@xmldom/xmldom";
 import { getDoubleSize, proxifyImageUrl } from "./proxifyUrl";
 import { validateAccountName } from "@/utils/chainValidation";
 import linksRe, {
@@ -87,7 +87,8 @@ function traverse(node, state, depth = 0) {
     if (tag === "img") img(state, child);
     else if (tag === "iframe") iframe(state, child);
     else if (tag === "a") link(state, child);
-    else if (child.nodeName === "#text") detectImageLinksOrLinkify(child, state);
+    else if (child.nodeName === "#text")
+      detectImageLinksOrLinkify(child, state);
     else if (tag === "p") handleDir(state, child);
 
     traverse(child, state, depth + 1);
